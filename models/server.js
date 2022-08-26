@@ -1,11 +1,10 @@
 const express = require("express");
-require('./device.js');
-
 
 class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT; // Loaded from .env file
+        this.app.use("/api/v1", require('./routes/apiRouter'))
     }
 
     listen() {

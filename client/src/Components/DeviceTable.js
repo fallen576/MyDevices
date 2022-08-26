@@ -21,8 +21,6 @@ export default function DeviceTable() {
                 <Col xs={12} sm={12} md={6} lg={4} xl={3} className="mb-2">
                     <Device />
                 </Col>
-                
-                
             </Row>
         </Container>
     )
