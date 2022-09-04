@@ -1,8 +1,9 @@
 class Device {
-    constructor(hostname, ip, mac) {
+    constructor(hostname, ip, mac, openPorts) {
         this.hostname = hostname;
         this.ip = ip;
         this.mac = mac;
+        this.openPorts = openPorts;
     }
 
     getHostname() {
@@ -15,6 +16,10 @@ class Device {
 
     getMac() {
         return this.mac;
+    }
+
+    getOpenPorts() {
+        return this.openPorts;
     }
 }
 

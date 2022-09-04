@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 
-export default function Device({mac,hostname,ip}) {
+export default function Device({mac,hostname,ip,ports}) {
     return (
         <div className="device card">
             <img className="card-img-top" src="" alt="" />
@@ -15,6 +15,20 @@ export default function Device({mac,hostname,ip}) {
                         <Col className="mb-2">
                             {ip}
                         </Col>
+                    </Row>
+                    <Row>
+                        {
+                            (ports.length > 0) ?
+                            <Col className="mb-2">
+                                Port List
+                                <ul>
+                                    {ports.map(port => {
+                                        return <li>{port}</li>
+                                    })}
+                                </ul>
+                            </Col>
+                             : "No open ports"
+                        }
                     </Row>
                 </Container>
                 <button className="btn btn-primary">Rescan</button>
