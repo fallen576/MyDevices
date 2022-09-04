@@ -26,7 +26,11 @@ export default function DeviceTable() {
             <input className="input mb-2" type="text" onChange={handleChange}/>
             {
                 (deviceList.length === 0) ?
-                    <p>loading...</p> :
+                    <div>
+                        <h5>Finding devices...</h5>
+                        <h5>Running port scans...</h5>
+                        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div> 
+                    </div>:
                     <Row>
                         {deviceList.filter(device => device.hostname.includes(filter)).map(device => 
                         <Col xs={12} sm={12} md={6} lg={4} xl={3} className="mb-2">
